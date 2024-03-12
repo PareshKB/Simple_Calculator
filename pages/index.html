@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Events</title>
+    <link rel="stylesheet" href="../css/mycss11.css">
+</head>
+<body>
+        <div class="container">
+            <h1><u>SIMPLE CALC APPLICATION</u></h1>
+            <hr/>
+            <br/>
+            NUM1:<input type="text" id="num1"/><br/><br/>
+            NUM2:<input type="text" id="num2"/><br/><br/>
+             RES :<input type="text" id="result"/><br/><br/>
+            <span style="color:red" id="error1"></span><br/>
+            <button id="b1">ADD</button> &nbsp;&nbsp;
+            <button id="b2">MUL</button>&nbsp;&nbsp;
+            <button id="c1">CLEAR</button> &nbsp;  <br/><br/>
+            <hr/>
+        </div>
+
+
+    <script>
+            var button1= document.getElementById('b1');
+            var button2 = document.getElementById('b2');
+
+            var c1 = document.getElementById('c1');
+
+        //ADD LISTNER TO ADD BUTTON
+          button1.addEventListener('click',(e)=>{
+            e.preventDefault();
+            var num1 = document.getElementById('num1');
+            var num2 = document.getElementById('num2');
+            var result = document.getElementById('result');
+            var a = parseInt(num1.value);
+            var b= parseInt(num2.value);
+           if(num1.value=="")
+            {
+                document.getElementById('error1').innerHTML="Please Enter Num1 & Num2 value";
+            } 
+            else
+             result.value=a+b;
+            });
+
+//MUL LISTNER TO ADD BUTTON
+button2.addEventListener('click',(e)=>{
+            e.preventDefault();
+            var num1 = document.getElementById('num1');
+            var num2 = document.getElementById('num2');
+            var result = document.getElementById('result');
+            var a = parseInt(num1.value);
+            var b= parseInt(num2.value);
+           if(num1.value=="")
+              alert('Please Enter num1 and num2 value')
+            else
+             result.value=a*b;
+            });
+
+
+
+            c1.addEventListener('click',(e)=>{
+                document.getElementById('num1').value='';
+                document.getElementById('num2').value='';
+                document.getElementById('result').value='';
+              
+            })
+
+           
+
+    </script>
+</body>
+</html>
